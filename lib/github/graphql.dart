@@ -18,6 +18,7 @@ import 'token.dart';
 import 'user.dart';
 
 final url = 'https://api.github.com/graphql';
+final urlv3 = 'https://api.github.com';
 final headers = {'Authorization': 'bearer $token'};
 final postHeaders = {'Authorization': 'token $token'};
 
@@ -338,6 +339,12 @@ void addComment(Issue issue, PullRequest pr, String commentBody) async {
 
   final result = await _query(mutation);
   print(result);
+}
+
+void loginAuth(String username, String password) async {
+  // final response = await http.get(url, headers:headers);
+  // print(response.statusCode);
+  // print(response.body);
 }
 
 /// Sends a GraphQL query to Github and returns raw response
